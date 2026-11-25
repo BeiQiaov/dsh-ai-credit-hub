@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "AI credit hub",
+    "description": "A draggable panel that gathers the remaining credits of Doubao, Qwen Work, WorkBuddy, Trae, and Qoder: collapsed it shows the total, expanded it shows every credit package.",
+    "detail": "docs/DETAIL.md"
+  }
+}

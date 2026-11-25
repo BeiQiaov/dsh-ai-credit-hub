@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "AI 工具积分余额",
+    "description": "窗口里一块可拖动的小面板，把豆包、千问工作、WorkBuddy、Trae、Qoder 的剩余积分收在一起：收起只看合计，展开看每个额度包的明细。",
+    "detail": "docs/DETAIL.zh.md"
+  }
+}
