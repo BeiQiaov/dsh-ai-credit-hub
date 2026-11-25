@@ -25,17 +25,12 @@
 
 ## 1. 建 GitHub 仓库并推上去
 
-插件目录现在是 `E:\MXYE\dsh-ai-credit-hub`（已经是 git 仓库，包文件在仓库根目录）。**先把 package.json 里三处 `REPLACE_WITH_YOUR_GITHUB_USER` 换成你的 GitHub 用户名**（`repository.url`、`homepage`、`bugs.url`），否则 npm 与市场无法把包和仓库关联起来。
+插件目录现在是 `E:\MXYE\dsh-ai-credit-hub`，包文件在仓库根目录，`repository` / `homepage` / `bugs` 已填成 `BeiQiaov/dsh-ai-credit-hub`。
+
+仓库已初始化并关联远端，剩下的就是推送（本地还领先 origin 一个提交）：
 
 ```sh
 cd E:/MXYE/dsh-ai-credit-hub
-git init
-git add -A
-git commit -m "dsh-ai-credit-hub 1.0.0"
-
-# 在 GitHub 上建一个空仓库，名字建议就叫 dsh-ai-credit-hub，然后：
-git remote add origin https://github.com/<你的用户名>/dsh-ai-credit-hub.git
-git branch -M main
 git push -u origin main
 ```
 
@@ -70,19 +65,19 @@ npm publish --access public
 
 **只需要加一个文件**，不要动 README（README 是脚本生成的，手改会冲突）：
 
-文件路径：`data/plugins/<你的GitHub用户名>__dsh-ai-credit-hub.yml`
+文件路径：`data/plugins/BeiQiaov__dsh-ai-credit-hub.yml`
 
 ```yaml
-url: https://github.com/<你的用户名>/dsh-ai-credit-hub
-name: <你的用户名>/dsh-ai-credit-hub
+url: https://github.com/BeiQiaov/dsh-ai-credit-hub
+name: BeiQiaov/dsh-ai-credit-hub
 category: usage
 
 description:
   en: 'Gathers the remaining credit balance of Doubao, Qwen Work, WorkBuddy, Trae and Qoder into one draggable strip, expandable to a per-package breakdown; it reads only the read-only local routes those connector plugins already publish, and each row appears only when its connector is installed and signed in.'
   zh: '把豆包、千问工作、WorkBuddy、Trae、Qoder 的剩余积分收进一条可拖动的小长条，展开可看每个额度包的明细；只读取这些连接器插件已发布的只读本地路由，未安装或未登录的连接器不会显示数字。'
 
-# 可选：GitHub 托管的方形位图，约 96px 显示；不写就用你的 GitHub 头像
-# icon: https://raw.githubusercontent.com/<你的用户名>/dsh-ai-credit-hub/main/assets/icon-180.png
+# 可选：GitHub 托管的方形位图（png/jpg/webp，SVG 会被拒），约 96px 显示；不写就用你的 GitHub 头像
+# icon: https://raw.githubusercontent.com/BeiQiaov/dsh-ai-credit-hub/main/assets/icon-180.png
 ```
 
 几个必须注意的点：
@@ -116,7 +111,7 @@ dsh plugin --profile <profile> add dsh-ai-credit-hub
 
 ## 5. 提交前自查清单
 
-- [ ] `package.json` 里三处 `REPLACE_WITH_YOUR_GITHUB_USER` 已替换
+- [x] `package.json` 里三处占位符已替换为 `BeiQiaov/dsh-ai-credit-hub`
 - [ ] `dsh.bundle` 仍在，`cordis.patch.yml` 仍在
 - [ ] 仓库创建满 1 天、已加 `dsh-plugin` topic
 - [ ] `node tools/check.mjs` 能跑通（需要本机有对应连接器）
